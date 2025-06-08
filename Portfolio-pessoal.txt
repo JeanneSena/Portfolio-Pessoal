@@ -1,0 +1,287 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Pessoal</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#welcome-section">Início</a>
+        <a href="#projects">Projetos</a>
+        <a href="#contact">Contato</a>
+        <a id="profile-link" href="https://github.com/SeuUsuarioGitHub" target="_blank">Meu GitHub</a>
+    </nav>
+
+    <section id="welcome-section">
+        <h1>Olá, eu sou Jeanne Sena</h1>
+        <p>Um(a) desenvolvedor(a) web em formação.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Meus Projetos</h2>
+        <div class="projects-grid">
+            <a href="https://JeanneSena.github.io/Tributo-Liam-Payne/" target="_blank" class="project-tile">
+                <img class="project-image" src="https://via.placeholder.com500x300.png?text=Projeto+Tributo" alt="Projeto Tributo a Liam Payne">
+                <p class="project-title">
+                    <span class="code">&lt;</span>Página de Tributo<span class="code">/&gt;</span>
+                </p>
+            </a>
+
+            <a href="https://JeanneSena.github.io/NomeDoSeuOutroProjeto/" target="_blank" class="project-tile">
+                <img class="project-image" src="https://via.placeholder.com/500x300.png?text=Nome+do+Projeto+2" alt="Nome do Projeto 2">
+                <p class="project-title">
+                    <span class="code">&lt;</span>Nome do Projeto 2<span class="code">/&gt;</span>
+                </p>
+            </a>
+
+            </div>
+    </section>
+
+    <section id="contact">
+        <h2>Vamos trabalhar juntos...</h2>
+        <p>Como você toma seu chá?</p>
+        <div class="contact-links">
+            <a href="https://github.com/SeuUsuarioGitHub" target="_blank" class="btn contact-details"><i class="fab fa-github"></i> GitHub</a>
+            <a href="mailto:seu.email@example.com" class="btn contact-details"><i class="fas fa-at"></i> Envie um E-mail</a>
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Jeanne Sena. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+:root {
+    --main-white: #f0f0f0;
+    --main-blue: #456789;
+    --main-gray: #303841;
+    --main-red: #be3144;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--main-gray);
+    color: var(--main-white);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--main-white);
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+a:hover {
+    color: var(--main-red);
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: flex-end; /* Alinha os links à direita */
+    position: fixed; /* Fixa a barra de navegação no topo */
+    top: 0; /* Garante que fique no topo */
+    left: 0;
+    width: 100%;
+    background-color: var(--main-red);
+    padding: 20px 0;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.4);
+    z-index: 10; /* Garante que fique acima de outros elementos */
+}
+
+#navbar a {
+    padding: 0 20px;
+    font-size: 1.2rem;
+}
+
+/* Seção de Boas-Vindas */
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Altura igual à altura da viewport */
+    background-color: var(--main-blue);
+    color: var(--main-white);
+    text-align: center;
+    padding-top: 60px; /* Para evitar que o conteúdo fique atrás da navbar */
+}
+
+#welcome-section h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#welcome-section p {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+/* Seção de Projetos */
+#projects {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--main-gray);
+    min-height: 100vh; /* Garante que a seção tenha altura suficiente */
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivo */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-tile {
+    background-color: var(--main-blue);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-tile:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 300px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    padding: 15px 10px;
+    color: var(--main-white);
+}
+
+.code {
+    color: orange; /* Apenas para destaque, você pode mudar */
+    font-weight: bold;
+}
+
+/* Seção de Contato */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh; /* Um pouco menor que a welcome-section */
+    background-color: var(--main-red);
+    color: var(--main-white);
+}
+
+#contact h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Para quebrar linha em telas menores */
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 15px 25px;
+    margin: 10px;
+    background-color: var(--main-blue);
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--main-gray);
+}
+
+.btn i {
+    margin-right: 10px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--main-gray);
+    color: var(--main-white);
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    border-top: 4px solid var(--main-red);
+}
+
+/* Media Query: Pelo menos uma */
+@media (max-width: 800px) {
+    #navbar {
+        justify-content: center; /* Centraliza links em telas pequenas */
+        padding: 10px 0;
+        flex-wrap: wrap;
+    }
+
+    #navbar a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    #welcome-section h1 {
+        font-size: 2.5rem;
+    }
+
+    #welcome-section p {
+        font-size: 1.2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* Um projeto por linha em telas menores */
+    }
+
+    #contact h2 {
+        font-size: 2.5rem;
+    }
+
+    #contact p {
+        font-size: 1.2rem;
+    }
+}
+
+** end of styles.css **
+
